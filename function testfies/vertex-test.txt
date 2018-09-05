@@ -1,0 +1,72 @@
+#include"graph.h"
+#include<iostream>
+
+int main() {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	graph<int>g;
+
+	for (int i = 0; i < 5; i++)
+		g.addNode(i);
+
+	for (int i = 1; i < 5; i++)
+		for (int j = 0; j < i; j++)
+			g.addVertex(i, j, i + j, 1, 1);
+
+	std::cout << g.getVertexList() << "\n";
+	system("PAUSE");
+	system("cls");
+
+	for (int i = 0; i < g.getMaxVertexAmount(); i++)
+			g.removeVertex(i);
+
+	std::cout << g.getVertexList() << "\n";
+	system("PAUSE");
+	system("cls");
+
+	g.addVertex(0, 1, 4, 1, 0);
+	g.addVertex(0, 1, 4, 1, 0);
+
+	std::cout << g.getVertexList() << "\n";
+	system("PAUSE");
+	system("cls");
+
+	for (int i = 0; i < g.getMaxVertexAmount(); i++)
+		g.removeVertex(i);
+
+	for (int i = 0; i < 5; i++)
+		for (int j = 0; j < 5; j++)
+			g.addVertex(i, j, i + j, 1, 1);
+
+	std::cout << g.findVertex(4) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	std::cout << g.getVertexList() << "\n";
+	system("PAUSE");
+	system("cls");
+
+	std::cout << g.getConnectedVertex(2) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	g.removeNode(2);
+
+	std::cout << g.getConnectedVertex(2) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	for (int i = 0; i < g.getMaxVertexAmount(); i++)
+		g.removeVertex(i);
+
+	std::cout << g.getVertexList() << "\n";
+	system("PAUSE");
+	system("cls");
+
+	for (int i = 0; i < 30; i++)
+		g.addVertex(0, 1, i, 1, 0);
+
+	std::cout << g.getVertexList() << "\n";
+	system("PAUSE");
+	system("cls");
+	return 0;
+}

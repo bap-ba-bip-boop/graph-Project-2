@@ -1,0 +1,70 @@
+#include"graph.h"
+#include<iostream>
+
+int main() {
+	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+	graph<int>g;
+
+	for (int i = 0; i < 8; i++)
+		g.addNode(i);
+
+	std::cout << g.getNodeList();
+	std::cout << "\n";
+	system("PAUSE");
+	system("cls");
+
+	for (int i = 0; i < 8; i++)
+		g.removeNode(i);
+
+	std::cout << g.getNodeList();
+	std::cout << "\n";
+	system("PAUSE");
+	system("cls");
+
+
+	for (int i = 0, j = 0; i < 10; i++) {
+		j = (2 * i + 1);
+		g.addNode(j);
+	}
+
+	std::cout << g.getNodeList();
+	std::cout << "\nnodeAmount: " << std::to_string(g.getNodeAmount()) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	g.removeNode(4);
+
+	std::cout << g.getNodeList();
+	std::cout << "\nnodeAmount: " << std::to_string(g.getNodeAmount()) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	int k = 1234;
+	g.addNode(k);
+
+	std::cout << g.getNodeList();
+	std::cout << "\nnodeAmount: " << std::to_string(g.getNodeAmount()) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	g.removeNode(1);
+	g.removeNode(3);
+	g.removeNode(5);
+
+	std::cout << g.getNodeList();
+	std::cout << "\nnodeAmount: " << std::to_string(g.getNodeAmount()) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	int o = 1111111, p = 2222222, å = 3333333;
+	g.addNode(o);
+	g.addNode(p);
+	g.addNode(å);
+
+	std::cout << g.getNodeList();
+	std::cout << "\nnodeAmount: " << std::to_string(g.getNodeAmount()) << "\n";
+	system("PAUSE");
+	system("cls");
+
+	return 0;
+}
